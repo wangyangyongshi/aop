@@ -20,7 +20,7 @@ public class LogAspects {
     @Before("pointCut()")
     public void logStart(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
-        System.out.println("除法运行*************,方法名称是：" + joinPoint.getSignature().getName()+",方法参数是："+ Arrays.asList(args));
+        System.out.println("除法运行*************,方法名称是：" + joinPoint.getSignature().getName() + ",方法参数是：" + Arrays.asList(args));
     }
 
     //无论正常结束还是异常结束
@@ -29,13 +29,14 @@ public class LogAspects {
         System.out.println("除法结束*************");
     }
 
-    @AfterReturning(value = "pointCut()",returning = "result")
-    public void logReturn(Object result) {
+    //joinpoint如果是参数，一定要放在参数的第一个位置，也就是作为第一个参数
+    @AfterReturning(value = "pointCut()", returning = "result")
+    public void logReturn(JoinPoint joinPoint, Object result) {
         System.out.println("除法返回*************");
     }
 
-    @AfterThrowing(value="pointCut()",throwing="exception")
+    @AfterThrowing(value = "pointCut()", throwing = "exception")
     public void logException(Exception exception) {
-        System.out.println("除法异常*************,异常为："+exception.toString());
+        System.out.println("除法异常*************,异常为：" + exception.toString());
     }
 }
