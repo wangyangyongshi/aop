@@ -8,6 +8,8 @@ import java.util.Arrays;
 /**
  * Created by wangyang on 2018/10/16.
  */
+
+////通知方法：前置通知，后置通知，返回通知，异常通知，环绕通知
 @Aspect
 public class LogAspects {
 
