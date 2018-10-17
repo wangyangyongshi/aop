@@ -1,7 +1,6 @@
 package scope;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import test1.Person;
 
 /**
  * Created by wangyang on 2018/10/17.
@@ -24,9 +23,15 @@ public class MainTest {
 //        ConfigurableEnvironment enviroment = applicationContext.getEnvironment();
 //        String property = enviroment.getProperty("os.name");
 //        System.out.println(property);
-        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
+        String[] beanNamesForType = applicationContext.getBeanDefinitionNames();
         for (String bean : beanNamesForType) {
             System.out.println(bean);
         }
+//        Object colorFactoryBean = applicationContext.getBean("colorFactoryBean");
+//        System.out.println("类型是："+colorFactoryBean.getClass());
+//
+//        Object bean = applicationContext.getBean("&colorFactoryBean");
+//        System.out.println(bean.getClass());
+        applicationContext.close();
     }
 }
