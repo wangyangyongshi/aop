@@ -1,5 +1,6 @@
 package aop;
 
+import com.alibaba.fastjson.JSON;
 import designPattern.Student;
 import org.junit.Test;
 
@@ -25,6 +26,11 @@ public class StudentTest {
         }
     }
 
+    public static void main(String[] args) {
+        String rebuild = "{\"id\":\"55784\",\"oldClassId\":\"6928\",\"newClassId\":\"7109\",\"isMail\":0,\"oneRmbRebuild\":\"1\",\"applyStatus\":\"4\",\"approveView\":\"\"}";
+        ClassRebuild classRebuild = JSON.parseObject(rebuild, ClassRebuild.class);
+        System.out.println(classRebuild.getOldClassId());
+    }
 
 
 }

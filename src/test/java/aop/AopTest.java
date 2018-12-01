@@ -20,27 +20,6 @@ public class AopTest {
         mathCaculate.div(1, 0);
         applicationContext.close();
     }
-//
-//    public static void main(String[] args) {
-//        List list1 = new ArrayList();
-//        List list2 = new ArrayList();
-//        List list3 = new ArrayList();
-//
-//        list2.add(1);
-//        list2.add(3);
-//        list2.add(5);
-//
-//        list3.add(2);
-//        list3.add(7);
-//        list3.add(6);
-//
-//        sort(list2);
-//
-//        list1.addAll(list2);
-//        sort(list3);
-//        list1.addAll(list3);
-//        System.out.println(list1.toString());
-//    }
 
     public static void sort(List list){
         Collections.sort(list, new Comparator<Integer>() {
